@@ -27,6 +27,7 @@
   <div id="main">
 
 
+
     <section id="header">
       <!-- <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a> -->
       <a href="index.html" class="navbar-logo">
@@ -52,6 +53,118 @@
     </section>
 
 
+<!-- Black & White Attractive Notice Section with GSAP (Top Display) -->
+<!-- Include GSAP CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+  .notice-section {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    margin-top: 50px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    position: relative;
+    /* stays at the top */
+    top: 70px;
+    /* adjust based on your navbar height */
+    left: 0;
+    right: 0;
+    z-index: 99;
+    /* ensures it stays above all other elements */
+    opacity: 0;
+    transform: translateY(-40px);
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .result-btn {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    padding: 10px 30px;
+    border-radius: 50px;
+    background: transparent;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transition: 0.4s ease;
+    animation: glowPulse 2.5s infinite;
+  }
+
+  .result-btn:hover {
+    background: #ffffff;
+    color: #000;
+    box-shadow: 0 0 25px #ffffff, 0 0 60px #ffffff;
+    transform: scale(1.1);
+  }
+
+  @keyframes glowPulse {
+    0% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    50% {
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    }
+
+    100% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .hint {
+    color: #bfbfbf;
+    font-size: 13px;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .notice-title {
+    color: #ccc;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+</style>
+
+<!-- Place below navbar -->
+<div class="notice-section" id="noticeBanner">
+  <div class="notice-title">Notice: Click below to view The Robo-Tech Fourum Recruitement drive 2025 Results!!! </div>
+  <a href="./result.html" target="_blank" class="result-btn">
+    Click to View Result
+  </a>
+
+</div>
+
+<script>
+  // GSAP animation: slide in and float gently
+  gsap.to("#noticeBanner", {
+    duration: 1.2,
+    y: 40,
+    opacity: 1,
+    ease: "power3.out"
+  });
+
+  gsap.to("#noticeBanner", {
+    y: "+=10",
+    repeat: -1,
+    yoyo: true,
+    duration: 2.2,
+    ease: "sine.inOut"
+  });
+</script>
+
+
+
+    
+
     <section id="hero">
       <img src="./assets/img/mobile-banner.jpg" alt="" id="hero-banner">
       <h2>THE</h2>
@@ -67,6 +180,7 @@
     </section>
 
 
+    
     <hr style="z-index: 999;margin-top: 100px; margin-bottom: 50px; border: none; height: 1px; background-color: #333; width: 100%;">
 
     <section class="learning-section">

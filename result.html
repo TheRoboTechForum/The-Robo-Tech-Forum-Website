@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robo-Tech Forum | Results</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            letter-spacing: 2px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #fff, #999);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glowText 3s infinite alternate;
+        }
+
+        @keyframes glowText {
+            from {
+                text-shadow: 0 0 10px #fff;
+            }
+
+            to {
+                text-shadow: 0 0 25px #ccc;
+            }
+        }
+
+        .branch-section {
+            margin: 50px auto;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .branch-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid white;
+            display: inline-block;
+            padding: 5px 15px;
+            letter-spacing: 1px;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            justify-items: center;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            width: 240px;
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+        }
+
+        .result-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+        }
+
+        .name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .year {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        /* Glitter background effect */
+        .branch-section::before {
+            content: '';
+            position: absolute;
+            top: -150%;
+            left: -150%;
+            width: 400%;
+            height: 400%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+            background-size: 5px 5px;
+            animation: glitterMove 6s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes glitterMove {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(60px, 60px);
+            }
+        }
+
+        .result-grid,
+        .branch-title {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Robo-Tech Forum Results</h1>
+
+    <div class="branch-section">
+        <div class="branch-title">CSE Department</div>
+        <div class="result-grid">
+            <div class="result-card">
+                <div class="name">Yash Mahalle</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Soham S. Joshi</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Jayesh Deepak Kaware</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Yash Ritesh Dhage</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Janhavi Jaiswal</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Payoshni Kaware</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Mohil Balchand Rahangdale</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Gadge Kashika Pramod</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Samidha N. Moharil</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Gauri Indrakumar Mete</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Rohansinh S. Chouhan</div>
+                <div class="year">CSE | 1st Year</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="branch-section">
+        <div class="branch-title">IT Department</div>
+        <div class="result-grid">
+            <div class="result-card">
+                <div class="name">Riddhi Somani</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Kritika Dayashankar Nee</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Snehashish Ranjit Bag</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Disha Lodha</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Prathamesh Prashant Tikekar</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Janvi Katole</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Sarvesh Yogeshrao Dhole</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Sayali Dilip Meshram</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Harshada Ananda Pardhi</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Manthan Umredkar</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Anand V. Kadu</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Vedant Damodhar Tighare</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Yash Rupesh Dhepe</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Utkarsha N. Kuthade</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Pranav Sudhakarrao Deshmukh</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Arnav S. Chavchan</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Chaitanya Nilesh Thakare</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Amar Rameshwar Munde</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Manav S. Kuril</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Kalyani Vinod Pidurkar</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Parth Amol Kardale</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Anagat Dongre</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Atharva Sudhir Patil</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Atharva Sanjay Satrate</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Shreyash S. Mete</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Rucha Sanjay Maldhure</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Pratik Mungshiram Dahake</div>
+                <div class="year">IT | 1st Year</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="branch-section">
+        <div class="branch-title">ELPO Department</div>
+        <div class="result-grid">
+            <div class="result-card">
+                <div class="name">Abhijit Dhanore</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Harshal Khandar</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Saurabh Dongare</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Chinmay Dhotre</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Aditya Shete</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Parikshit Suryawanshi</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Chaitrali Satkar</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Shripad Kothale</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Atharva Deodiya</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Shivam Shirbhate</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Priyanshu Talan</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Sonali Tale</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Yash Burande</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Sonali Tale</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Yashraj Savarkar</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Toshika Satpute</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Tabish Sheikh</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Prathmesh Pawar</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Shravani Parkhi</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Amay Verulkar</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Ayushi Topale</div>
+                <div class="year">ELPO | 1st Year</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="branch-section">
+        <div class="branch-title">ENTC Department</div>
+        <div class="result-grid">
+            <div class="result-card">
+                <div class="name">Anushka Sonwane</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Parth Deshmukh</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Harsh Kumbhakar</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Sanmit Goindani</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Arnav Patil</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Gaurav Patil</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Vivek Nirmal</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Aradhya Bind</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Viraj Mohod</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Ashwinkumar Waliganda</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Suyash Pagirut</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Varad Deshpande</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Sujal Tajne</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Reddirouthu Surya</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Digambar Damdhar</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Rutuja Warkad</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Shravani Ade</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Yugant Patil</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Kashish Joge</div>
+                <div class="year">ENTC | 1st Year</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="branch-section">
+        <div class="branch-title">INSTRU Department</div>
+        <div class="result-grid">
+            <div class="result-card">
+                <div class="name">Atharva Dangare</div>
+                <div class="year">INSTRU | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Bhoomika Dhamankar</div>
+                <div class="year">INSTRU | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Pornima Chaudhari</div>
+                <div class="year">INSTRU | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Trupti Thote</div>
+                <div class="year">INSTRU | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Saksham Gaikwad</div>
+                <div class="year">INSTRU | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Abhinav Bodhe</div>
+                <div class="year">INSTRU | 1st Year</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="branch-section">
+        <div class="branch-title">MECH Department</div>
+        <div class="result-grid">
+            <div class="result-card">
+                <div class="name">Sayali Kadu</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Tanay Bonde</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Mohit Suresh Kukade</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Malay Ekre</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Prajwal Dhote</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Arya Sune</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Aanan Thakare</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Gaurav Gangadhar Admane</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Aditya Bhure</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Girish B. Farkunde</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Maharshi M. Vidhale</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Om Swapnil Deshmukh</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Atharva Ajayrao Pande</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Darshan Mahajan</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Siddant Dongare</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Gaurav Tajane</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Chaitanya Gondane</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Kshama Deshmukh</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Shreyash Garwe</div>
+                <div class="year">MECH | 1st Year</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="branch-section">
+        <div class="branch-title">CIVIL Department</div>
+        <div class="result-grid">
+            <div class="result-card">
+                <div class="name">Krishna Bhele</div>
+                <div class="year">CIVIL | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Sanskruti Wankhade</div>
+                <div class="year">CIVIL | 1st Year</div>
+            </div>
+            <div class="result-card">
+                <div class="name">Kastub Agrawal</div>
+                <div class="year">CIVIL | 1st Year</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
