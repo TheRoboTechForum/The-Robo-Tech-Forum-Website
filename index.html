@@ -18,6 +18,175 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
+<style>
+  .hero {
+    position: absolute;
+    /* height: 200px; */
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    opacity: 0.85;
+    font-weight: 300;
+  }
+
+  .results-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.3s backwards;
+  }
+
+  .results-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .results-btn {
+    background: white;
+    color: #000000;
+    border: none;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .results-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .results-btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .results-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
+    background: #f0f0f0;
+  }
+
+  .results-btn:active {
+    transform: translateY(-1px);
+  }
+
+  .results-btn span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .arrow {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .results-btn:hover .arrow {
+    transform: translateX(5px);
+  }
+
+  .floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  .shape {
+    position: absolute;
+    opacity: 0.08;
+    animation: floatShape 15s infinite ease-in-out;
+  }
+
+  .shape:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .shape:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 30%;
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+  }
+
+  .shape:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+  }
+
+  @keyframes floatShape {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-30px) rotate(180deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+    }
+
+    .results-section {
+      padding: 2rem 1.5rem;
+    }
+
+    .results-title {
+      font-size: 1.4rem;
+    }
+  }
+</style>
 
 
 <body class="no-scroll dark-mode">
@@ -28,7 +197,7 @@
 
 
 
-    <section id="header">
+    <section style="z-index: 999;" id="header">
       <!-- <a href="#"><img src="./logo-removebg-preview-modified.png" width="140px" class="logo" alt=""></a> -->
       <a href="index.html" class="navbar-logo">
         <img style="position: relative; width: 40px;" src="./assets/img/new logo only.png" alt="">
@@ -53,113 +222,56 @@
     </section>
 
 
-<!-- Black & White Attractive Notice Section with GSAP (Top Display) -->
-<!-- Include GSAP CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<style>
-  .notice-section {
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 18px 0;
-    margin-top: 50px;
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    position: relative;
-    /* stays at the top */
-    top: 70px;
-    /* adjust based on your navbar height */
-    left: 0;
-    right: 0;
-    z-index: 99;
-    /* ensures it stays above all other elements */
-    opacity: 0;
-    transform: translateY(-40px);
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-  }
+    <div style="z-index: 99;width: 100%; margin-top: 70px; margin-bottom: 90px; position: relative; justify-content: center; display: flex;" class="result-container-hero">
+  <section class="hero">
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
 
-  .result-btn {
-    position: relative;
-    display: inline-block;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid #ffffff;
-    padding: 10px 30px;
-    border-radius: 50px;
-    background: transparent;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    transition: 0.4s ease;
-    animation: glowPulse 2.5s infinite;
-  }
+    <div class="hero-content">
+      <div class="results-section">
+        <h2 class="results-title">Ready to Explore?</h2>
+        <button class="results-btn" onclick="navigateToResults()">
+          <span>Click to View Results<span class="arrow">→</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+    </div>
 
-  .result-btn:hover {
-    background: #ffffff;
-    color: #000;
-    box-shadow: 0 0 25px #ffffff, 0 0 60px #ffffff;
-    transform: scale(1.1);
-  }
 
-  @keyframes glowPulse {
-    0% {
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  <script>
+    function navigateToResults() {
+      // Change this URL to your results page
+      window.location.href = 'robo_tech_results.html';
+
+      // Alternative: Open in new tab
+      // window.open('results.html', '_blank');
     }
 
-    50% {
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
-    }
+    // Add smooth scroll effect on button click
+    document.querySelector('.results-btn').addEventListener('click', function (e) {
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 100);
+    });
 
-    100% {
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    }
-  }
+    // Optional: Add parallax effect to floating shapes
+    document.addEventListener('mousemove', (e) => {
+      const shapes = document.querySelectorAll('.shape');
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
 
-  .hint {
-    color: #bfbfbf;
-    font-size: 13px;
-    margin-top: 6px;
-    letter-spacing: 0.5px;
-  }
-
-  .notice-title {
-    color: #ccc;
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-</style>
-
-<!-- Place below navbar -->
-<div class="notice-section" id="noticeBanner">
-  <div class="notice-title">Notice: Click below to view The Robo-Tech Fourum Recruitement drive 2025 Results!!! </div>
-  <a href="./result.html" target="_blank" class="result-btn">
-    Click to View Result
-  </a>
-
-</div>
-
-<script>
-  // GSAP animation: slide in and float gently
-  gsap.to("#noticeBanner", {
-    duration: 1.2,
-    y: 40,
-    opacity: 1,
-    ease: "power3.out"
-  });
-
-  gsap.to("#noticeBanner", {
-    y: "+=10",
-    repeat: -1,
-    yoyo: true,
-    duration: 2.2,
-    ease: "sine.inOut"
-  });
-</script>
+      shapes.forEach((shape, index) => {
+        const speed = (index + 1) * 20;
+        shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+      });
+    });
+  </script>
 
 
 
@@ -181,7 +293,7 @@
 
 
     
-    <hr style="z-index: 999;margin-top: 100px; margin-bottom: 50px; border: none; height: 1px; background-color: #333; width: 100%;">
+    <hr style="margin-top: 100px; margin-bottom: 50px; border: none; height: 1px; background-color: #333; width: 100%;">
 
     <section class="learning-section">
       <div class="section">
