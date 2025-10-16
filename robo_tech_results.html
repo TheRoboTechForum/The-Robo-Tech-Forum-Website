@@ -1,344 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Robo-Tech Forum | Recruited Students</title>
 
-    <style>
-      /* ---- Base Theme ---- */
-      body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background-color: #000;
-        color: #fff;
-        overflow-x: hidden;
-        position: relative;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Robo-Tech Forum | Recruited Students</title>
+
+  <style>
+    /* ---- Base Theme ---- */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ---- Animated Background ---- */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%,
+          rgba(255, 255, 255, 0.1),
+          transparent 40%),
+        radial-gradient(circle at 70% 70%,
+          rgba(255, 255, 255, 0.08),
+          transparent 40%);
+      z-index: 0;
+      animation: drift 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate(0, 0);
       }
 
-      /* ---- Animated Background ---- */
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: radial-gradient(
-            circle at 30% 30%,
-            rgba(255, 255, 255, 0.1),
-            transparent 40%
-          ),
-          radial-gradient(
-            circle at 70% 70%,
-            rgba(255, 255, 255, 0.08),
-            transparent 40%
-          );
-        z-index: 0;
-        animation: drift 10s infinite alternate ease-in-out;
+      to {
+        transform: translate(50px, -40px);
+      }
+    }
+
+    /* ---- Header ---- */
+    header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 60px 10px 25px;
+      background-color: transparent;
+    }
+
+    h1 {
+      font-size: 3rem;
+      /* slightly bigger for impact */
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #fff;
+      /* pure white text */
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+      /* glowing effect */
+      animation: glow 2s infinite alternate;
+    }
+
+    /* Subtle glow animation */
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
       }
 
-      @keyframes drift {
-        from {
-          transform: translate(0, 0);
-        }
+      to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
+          0 0 50px #fff;
+      }
+    }
 
-        to {
-          transform: translate(50px, -40px);
-        }
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff;
       }
 
-      /* ---- Header ---- */
-      header {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        padding: 60px 10px 25px;
-        background-color: transparent;
+      to {
+        text-shadow: 0 0 25px #bbb;
       }
+    }
 
-      h1 {
-        font-size: 3rem; /* slightly bigger for impact */
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        color: #fff; /* pure white text */
-        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff; /* glowing effect */
-        animation: glow 2s infinite alternate;
+    */ h3 {
+      color: #aaa;
+      font-weight: 400;
+      margin-top: 10px;
+    }
+
+    /* ---- Search Box ---- */
+    .search-container {
+      text-align: center;
+      margin: 25px 0;
+      z-index: 2;
+      position: relative;
+    }
+
+    #searchInput {
+      width: 63%;
+      max-width: 400px;
+      padding: 10px 14px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    #searchInput:focus {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 10px #fff;
+    }
+
+    /* ---- Branch Sections ---- */
+    .branch-section {
+      width: 70%;
+      max-width: 1200px;
+      margin: 50px auto;
+      background: rgba(10, 141, 242, 0.05);
+      border: 5px solid rgba(255, 255, 255, 0.545);
+      border-radius: 18px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .branch-section:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 30px #0a8df2;
+    }
+
+    .branch-title {
+      text-align: center;
+      font-size: 1.8rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 25px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
+    /* ---- Cards ---- */
+    .result-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.888);
+      width: 150px;
+      text-align: center;
+      padding: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .result-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    }
+
+    .name {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .year {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+      padding: 25px 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>The Robo-Tech Forum</h1>
+    <h3>Recruited Students 2025</h3>
+  </header>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder=" Search Your Name & Scroll Down" />
+  </div>
+
+  <script>
+    const students = [
+      { name: "Yash Mahalle", branch: "CSE" },
+      { name: "Gauri Indrakumar Mete", branch: "CSE" },
+      { name: "Gadge Kashika Pramod", branch: "CSE" },
+      { name: "Mohil Balchand Rahangdale", branch: "CSE" },
+      { name: "Yash Ritesh Dhage", branch: "CSE" },
+      { name: "Soham Dameshwar Pawar", branch: "CSE" },
+      { name: "Payoshni Kaware", branch: "CSE" },
+      { name: "Samidha N. Moharil", branch: "CSE" },
+
+      { name: "Sayali Dilip Meshram", branch: "IT" },
+      { name: "Rucha Sanjay Maldhure", branch: "IT" },
+      { name: "Prathamesh Prashant Tikekar", branch: "IT" },
+      { name: "Chaitanya Nilesh Thakare", branch: "IT" },
+      { name: "Utkarsha N. Kukade", branch: "IT" },
+      { name: "Vedant Damodhar Tighare", branch: "IT" },
+      { name: "Anand V. Kadu", branch: "IT" },
+      { name: "Snehashish Ranjit Bagde", branch: "IT" },
+      { name: "Kritika Dayashankar Neer", branch: "IT" },
+      { name: "Riddhi Somani", branch: "IT" },
+
+      { name: "Sonali Tale", branch: "Electrical" },
+      { name: "Shivam Shirbhate", branch: "Electrical" },
+      { name: "Priyanshu Talan", branch: "Electrical" },
+      { name: "Shripad Kothare", branch: "Electrical" },
+      { name: "Parikshit Suryawanshi", branch: "Electrical" },
+      { name: "Harsh Vaidya", branch: "Electrical" },
+      { name: "Devyani Shrinath", branch: "Electrical" },
+      { name: "Yashraj Sawarkar", branch: "Electrical" },
+
+
+      { name: "Gaurav Patil", branch: "ENTC" },
+      { name: "Sanmit Goindani", branch: "ENTC" },
+      { name: "Anushka Sonawane", branch: "ENTC" },
+      { name: "Arnav Patil", branch: "ENTC" },
+      { name: "Viraj Mohod", branch: "ENTC" },
+      { name: "Kashish Jage", branch: "ENTC" },
+      { name: "Chinmay Dhotre", branch: "ENTC" },
+      { name: "Yugant Patil", branch: "ENTC" },
+      { name: "Prathamesh Pawar", branch: "ENTC" },
+
+      { name: "Arya Sune", branch: "Instru" },
+      { name: "Saksham Gaikwad", branch: "Instru" },
+      { name: "Neha Waghmare", branch: "Instru" },
+
+      { name: "Malay Ekre", branch: "Mechanical" },
+      { name: "Aditya Bhuve", branch: "Mechanical" },
+      { name: "Aanand Thakre", branch: "Mechanical" },
+      { name: "Kshama Deshmukh", branch: "Mechanical" },
+      { name: "Gaurav Admane", branch: "Mechanical" },
+      { name: "Prajwal Dhotre", branch: "Mechanical" },
+      { name: "Om Deshmukh", branch: "Mechanical" },
+      { name: "Atharva Pande", branch: "Mechanical" },
+      { name: "Mohit Kukade", branch: "Mechanical" },
+      { name: "Shreyas Garve", branch: "Mechanical" },
+      { name: "Tanay Bonde", branch: "Mechanical" },
+
+      { name: "Sunil Bylle", branch: "Civil" },
+      { name: "Kaustubh Agrawal", branch: "Civil" },
+      { name: "Sanskruti Wankhade", branch: "Civil" },
+    ];
+
+    // Function to map abbreviations to full names for display in card
+    function getFullBranchName(abbreviation) {
+      const map = {
+        Civil: "Civil",
+        ENTC: "ENTC",
+        Electrical: "Electrical",
+        Instru: "Instrumentation",
+        CSE: "CSE",
+        IT: "IT",
+        Mechanical: "Mechanical",
+      };
+      return map[abbreviation] || abbreviation;
+    }
+
+    // Group students by branch
+    const studentsByBranch = students.reduce((acc, student) => {
+      if (!acc[student.branch]) {
+        acc[student.branch] = [];
       }
+      acc[student.branch].push(student);
+      return acc;
+    }, {});
 
-      /* Subtle glow animation */
-      @keyframes glow {
-        from {
-          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
-        }
-        to {
-          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff,
-            0 0 50px #fff;
-        }
-      }
+    const body = document.querySelector("body");
 
-      @keyframes glow {
-        from {
-          text-shadow: 0 0 10px #fff;
-        }
+    // Loop through the grouped branches to create HTML sections
+    for (const branch in studentsByBranch) {
+      const section = document.createElement("section");
+      section.className = "branch-section";
 
-        to {
-          text-shadow: 0 0 25px #bbb;
-        }
-      }
-      */ h3 {
-        color: #aaa;
-        font-weight: 400;
-        margin-top: 10px;
-      }
+      const titleDiv = document.createElement("div");
+      titleDiv.className = "branch-title";
+      // Use a descriptive name for the title
+      titleDiv.textContent = `${getFullBranchName(branch)} Department`;
 
-      /* ---- Search Box ---- */
-      .search-container {
-        text-align: center;
-        margin: 25px 0;
-        z-index: 2;
-        position: relative;
-      }
+      const gridDiv = document.createElement("div");
+      gridDiv.className = "result-grid";
 
-      #searchInput {
-        width: 63%;
-        max-width: 400px;
-        padding: 10px 14px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.05);
-        color: #fff;
-        font-size: 1rem;
-        outline: none;
-        transition: 0.3s;
-      }
+      studentsByBranch[branch].forEach((student) => {
+        const cardDiv = document.createElement("div");
+        cardDiv.className = "result-card";
 
-      #searchInput:focus {
-        border-color: #fff;
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 10px #fff;
-      }
+        const nameDiv = document.createElement("div");
+        nameDiv.className = "name";
+        nameDiv.textContent = student.name;
 
-      /* ---- Branch Sections ---- */
-      .branch-section {
-        width: 70%;
-        max-width: 1200px;
-        margin: 50px auto;
-        background: rgba(10, 141, 242, 0.05);
-        border: 5px solid rgba(255, 255, 255, 0.545);
-        border-radius: 18px;
-        padding: 30px;
-        backdrop-filter: blur(10px);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+        const yearDiv = document.createElement("div");
+        yearDiv.className = "year";
+        // Use the abbreviation in the card for conciseness
+        yearDiv.textContent = `${branch} | 1st Year`;
 
-      .branch-section:hover {
-        transform: scale(1.01);
-        box-shadow: 0 0 30px #0a8df2;
-      }
+        cardDiv.appendChild(nameDiv);
+        cardDiv.appendChild(yearDiv);
+        gridDiv.appendChild(cardDiv);
+      });
 
-      .branch-title {
-        text-align: center;
-        font-size: 1.8rem;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-        display: inline-block;
-        padding-bottom: 8px;
-        margin-bottom: 25px;
-      }
+      section.appendChild(titleDiv);
+      section.appendChild(gridDiv);
+      body.appendChild(section);
+    }
+  </script>
 
-      .result-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
-        justify-items: center;
-      }
+  <footer>© 2025 The Robo-Tech Forum | All Rights Reserved.</footer>
 
-      /* ---- Cards ---- */
-      .result-card {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.888);
-        width: 150px;
-        text-align: center;
-        padding: 20px;
-        transition: all 0.3s ease-in-out;
-      }
-
-      .result-card:hover {
-        background: rgba(255, 255, 255, 0.15);
-        transform: translateY(-8px);
-        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-      }
-
-      .name {
-        font-size: 1.1rem;
-        font-weight: 600;
-      }
-
-      .year {
-        font-size: 0.9rem;
-        color: #ccc;
-      }
-
-      /* ---- Footer ---- */
-      footer {
-        text-align: center;
-        font-size: 0.85rem;
-        color: #888;
-        padding: 25px 10px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 50px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <h1>The Robo-Tech Forum</h1>
-      <h3>Recruited Students 2025</h3>
-    </header>
-
-    <div class="search-container">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder=" Search Your Name & Scroll Down"
-      />
-    </div>
-
-    <script>
-      const students = [
-        { name: "Yash Mahalle", branch: "CSE" },
-        { name: "Gauri Indrakumar Mete", branch: "CSE" },
-        { name: "Gadge Kashika Pramod", branch: "CSE" },
-        { name: "Mohil Balchand Rahangdale", branch: "CSE" },
-        { name: "Yash Ritesh Dhage", branch: "CSE" },
-        { name: "Soham Dameshwar Pawar", branch: "CSE" },
-        { name: "Payoshni Kaware", branch: "CSE" },
-        { name: "Samidha N. Moharil", branch: "CSE" },
-
-        { name: "Sayali Dilip Meshram", branch: "IT" },
-        { name: "Rucha Sanjay Maldhure", branch: "IT" },
-        { name: "Prathamesh Prashant Tikekar", branch: "IT" },
-        { name: "Chaitanya Nilesh Thakare", branch: "IT" },
-        { name: "Utkarsha N. Kukade", branch: "IT" },
-        { name: "Vedant Damodhar Tighare", branch: "IT" },
-        { name: "Anand V. Kadu", branch: "IT" },
-        { name: "Snehashish Ranjit Bagde", branch: "IT" },
-        { name: "Kritika Dayashankar Neer", branch: "IT" },
-        { name: "Riddhi Somani", branch: "IT" },
-
-        { name: "Sonali Tale", branch: "Electrical" },
-        { name: "Shivam Shirbhate", branch: "Electrical" },
-        { name: "Priyanshu Talan", branch: "Electrical" },
-        { name: "Shripad Kothare", branch: "Electrical" },
-        { name: "Parikshit Suryawanshi", branch: "Electrical" },
-        { name: "Harsh Vaidya", branch: "Electrical" },
-
-        { name: "Devyani Shrinath", branch: "ENTC" },
-        { name: "Gaurav Patil", branch: "ENTC" },
-        { name: "Sanmit Goindani", branch: "ENTC" },
-        { name: "Anushka Sonawane", branch: "ENTC" },
-        { name: "Arnav Patil", branch: "ENTC" },
-        { name: "Viraj Mohod", branch: "ENTC" },
-        { name: "Kashish Jage", branch: "ENTC" },
-        { name: "Chinmay Dhotre", branch: "ENTC" },
-        { name: "Yugant Patil", branch: "ENTC" },
-        { name: "Prathamesh Pawar", branch: "ENTC" },
-
-        { name: "Arya Sune", branch: "Instru" },
-        { name: "Saksham Gaikwad", branch: "Instru" },
-        { name: "Neha Waghmare", branch: "Instru" },
-
-        { name: "Malay Ekre", branch: "Mechanical" },
-        { name: "Aditya Bhuve", branch: "Mechanical" },
-        { name: "Aanand Thakre", branch: "Mechanical" },
-        { name: "Kshama Deshmukh", branch: "Mechanical" },
-        { name: "Gaurav Admane", branch: "Mechanical" },
-        { name: "Prajwal Dhotre", branch: "Mechanical" },
-        { name: "Om Deshmukh", branch: "Mechanical" },
-        { name: "Atharva Pande", branch: "Mechanical" },
-        { name: "Mohit Kukade", branch: "Mechanical" },
-        { name: "Shreyas Garve", branch: "Mechanical" },
-        { name: "Tanay Bonde", branch: "Mechanical" },
-
-        { name: "Sunil Bylle", branch: "Civil" },
-        { name: "Kaustubh Agrawal", branch: "Civil" },
-        { name: "Sanskruti Wankhade", branch: "Civil" },
-      ];
-
-      // Function to map abbreviations to full names for display in card
-      function getFullBranchName(abbreviation) {
-        const map = {
-          Civil: "Civil",
-          ENTC: "ENTC",
-          Electrical: "Electrical",
-          Instru: "Instrumentation",
-          CSE: "CSE",
-          IT: "IT",
-          Mechanical: "Mechanical",
-        };
-        return map[abbreviation] || abbreviation;
-      }
-
-      // Group students by branch
-      const studentsByBranch = students.reduce((acc, student) => {
-        if (!acc[student.branch]) {
-          acc[student.branch] = [];
-        }
-        acc[student.branch].push(student);
-        return acc;
-      }, {});
-
-      const body = document.querySelector("body");
-
-      // Loop through the grouped branches to create HTML sections
-      for (const branch in studentsByBranch) {
-        const section = document.createElement("section");
-        section.className = "branch-section";
-
-        const titleDiv = document.createElement("div");
-        titleDiv.className = "branch-title";
-        // Use a descriptive name for the title
-        titleDiv.textContent = `${getFullBranchName(branch)} Department`;
-
-        const gridDiv = document.createElement("div");
-        gridDiv.className = "result-grid";
-
-        studentsByBranch[branch].forEach((student) => {
-          const cardDiv = document.createElement("div");
-          cardDiv.className = "result-card";
-
-          const nameDiv = document.createElement("div");
-          nameDiv.className = "name";
-          nameDiv.textContent = student.name;
-
-          const yearDiv = document.createElement("div");
-          yearDiv.className = "year";
-          // Use the abbreviation in the card for conciseness
-          yearDiv.textContent = `${branch} | 1st Year`;
-
-          cardDiv.appendChild(nameDiv);
-          cardDiv.appendChild(yearDiv);
-          gridDiv.appendChild(cardDiv);
+  <script>
+    document
+      .getElementById("searchInput")
+      .addEventListener("input", function () {
+        const filter = this.value.toLowerCase();
+        const cards = document.querySelectorAll(".result-card");
+        cards.forEach((card) => {
+          const name = card.querySelector(".name").textContent.toLowerCase();
+          card.style.display = name.includes(filter) ? "" : "none";
         });
+      });
+  </script>
+</body>
 
-        section.appendChild(titleDiv);
-        section.appendChild(gridDiv);
-        body.appendChild(section);
-      }
-    </script>
-
-    <footer>© 2025 The Robo-Tech Forum | All Rights Reserved.</footer>
-
-    <script>
-      document
-        .getElementById("searchInput")
-        .addEventListener("input", function () {
-          const filter = this.value.toLowerCase();
-          const cards = document.querySelectorAll(".result-card");
-          cards.forEach((card) => {
-            const name = card.querySelector(".name").textContent.toLowerCase();
-            card.style.display = name.includes(filter) ? "" : "none";
-          });
-        });
-    </script>
-  </body>
 </html>
